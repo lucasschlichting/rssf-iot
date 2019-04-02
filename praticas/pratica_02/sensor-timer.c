@@ -34,8 +34,10 @@ PROCESS_THREAD(sensor_process, ev, data)
         int val = batmon_sensor.value(BATMON_SENSOR_TYPE_TEMP); // lê sensor
 
         /* Insira seu código aqui */
-
-
+        if(buf_c < BUF_SIZE){
+            buffer[buf_c++] = val;
+            printf("aqui");
+        }
 
         printf("Leu %d\n", val);
     }
